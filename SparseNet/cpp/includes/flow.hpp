@@ -1,4 +1,5 @@
 #include <cstdint>
+#include <string>
 
 #if defined(_WIN32)
     #include <winsock2.h>
@@ -31,3 +32,14 @@ struct Flow
     Protocol protocol;
 };
 
+// function to get The Protocol
+
+std::string GetProtocolName(Protocol p) {
+    switch(p){
+        case Protocol::TCP: return "TCP";
+        case Protocol::UDP: return "UDP";
+        case Protocol::ICMP: return "ICMP";
+
+        default: return "Unknown";
+    }
+}

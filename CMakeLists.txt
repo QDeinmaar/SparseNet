@@ -15,5 +15,14 @@ add_executable(SparseNet
 
 target_include_directories(SparseNet
     PRIVATE
-        cpp/include
+    SparseNet/cpp/includes
 )
+
+if(WIN32)
+
+target_link_libraries(SparseNet 
+    PRIVATE 
+    ws2_32
+)
+
+endif()
