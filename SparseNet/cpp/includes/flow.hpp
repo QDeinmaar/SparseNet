@@ -1,3 +1,5 @@
+#pragma once
+
 #include <cstdint>
 #include <string>
 
@@ -34,7 +36,7 @@ struct Flow
 
 // function to get The Protocol
 
-std::string GetProtocolName(Protocol p) {
+inline std::string GetProtocolName(Protocol p) {
     switch(p){
         case Protocol::TCP: return "TCP";
         case Protocol::UDP: return "UDP";
